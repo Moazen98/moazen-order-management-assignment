@@ -6,7 +6,7 @@
 
 # Order Management & Payment API
 
-- [ ] #Note: 
+- [ ] Note: 
 > This documentation is intended to allow developers to integrate with the API without reading the source code.
 
 Overview
