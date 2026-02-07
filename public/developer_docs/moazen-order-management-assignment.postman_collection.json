@@ -1,0 +1,810 @@
+{
+  "info": {
+    "_postman_id": "03e04086-9a2e-4c47-a209-0c5b909b8e22",
+    "name": "moazen-order-management-assignment",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "22895973"
+  },
+  "item": [
+    {
+      "name": "products",
+      "item": [
+        {
+          "name": "index",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "accept-language",
+                "value": "{{language-variable}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{local}}/products/index",
+              "host": [
+                "{{local}}"
+              ],
+              "path": [
+                "products",
+                "index"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "show",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "accept-language",
+                "value": "{{language-variable}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{local}}/products/show?id=1",
+              "host": [
+                "{{local}}"
+              ],
+              "path": [
+                "products",
+                "show"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "authentication",
+      "item": [
+        {
+          "name": "register",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "accept-language",
+                "value": "{{language-variable}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "Mohamad Al Moazen",
+                  "description": "required",
+                  "type": "text",
+                  "uuid": "2bcf4232-e87d-45c7-923b-d52457dab6a5"
+                },
+                {
+                  "key": "email",
+                  "value": "mhd.moazen98@gmail.com2",
+                  "description": "required",
+                  "type": "text",
+                  "uuid": "c1f63ba6-08d1-4d58-9153-fd59376b1e8a"
+                },
+                {
+                  "key": "password",
+                  "value": "12345678",
+                  "description": "required",
+                  "type": "text",
+                  "uuid": "a29a0fdf-37ed-4d9e-a1c4-323732613a01"
+                },
+                {
+                  "key": "confirm_password",
+                  "value": "12345678",
+                  "description": "required",
+                  "type": "text",
+                  "uuid": "9a2aa54c-74fa-4acf-857a-6cf6f750389f"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{local}}/authentication/register",
+              "host": [
+                "{{local}}"
+              ],
+              "path": [
+                "authentication",
+                "register"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "login",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "let response = pm.response.json();\r",
+                  "pm.collectionVariables.set('token', response.data.access_token);"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "accept-language",
+                "value": "{{language-variable}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "email",
+                  "value": "mhd.moazen98@gmail.com",
+                  "description": "required",
+                  "type": "text",
+                  "uuid": "c1f63ba6-08d1-4d58-9153-fd59376b1e8a"
+                },
+                {
+                  "key": "password",
+                  "value": "12345678",
+                  "description": "required",
+                  "type": "text",
+                  "uuid": "a29a0fdf-37ed-4d9e-a1c4-323732613a01"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{local}}/authentication/login",
+              "host": [
+                "{{local}}"
+              ],
+              "path": [
+                "authentication",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "logout",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "accept-language",
+                "value": "{{language-variable}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": []
+            },
+            "url": {
+              "raw": "{{local}}/authentication/logout",
+              "host": [
+                "{{local}}"
+              ],
+              "path": [
+                "authentication",
+                "logout"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "me",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "accept-language",
+                "value": "{{language-variable}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": []
+            },
+            "url": {
+              "raw": "{{local}}/authentication/me",
+              "host": [
+                "{{local}}"
+              ],
+              "path": [
+                "authentication",
+                "me"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "order",
+      "item": [
+        {
+          "name": "Payment (callback)",
+          "item": [
+            {
+              "name": "success",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "accept-language",
+                    "value": "{{language-variable}}",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "transaction_id",
+                      "value": "cc_698781cbed03d",
+                      "description": "the transaction_id generated by pay function api ",
+                      "type": "text"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{local}}/payment/success",
+                  "host": [
+                    "{{local}}"
+                  ],
+                  "path": [
+                    "payment",
+                    "success"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "cancel",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "accept-language",
+                    "value": "{{language-variable}}",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "transaction_id",
+                      "value": "cc_69877e68d950c",
+                      "description": "the transaction_id generated by pay function api ",
+                      "type": "text"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{local}}/payment/cancel",
+                  "host": [
+                    "{{local}}"
+                  ],
+                  "path": [
+                    "payment",
+                    "cancel"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ],
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {},
+                "exec": [
+                  ""
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {},
+                "exec": [
+                  ""
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "index",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "accept-language",
+                "value": "{{language-variable}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{local}}/order/index?page=1&status=Pending",
+              "host": [
+                "{{local}}"
+              ],
+              "path": [
+                "order",
+                "index"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "status",
+                  "value": "Pending",
+                  "description": "Pending, Successful, Failed (not required -> all user orders)"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "show",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "accept-language",
+                "value": "{{language-variable}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{local}}/order/show?id=1",
+              "host": [
+                "{{local}}"
+              ],
+              "path": [
+                "order",
+                "show"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "store",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "accept-language",
+                "value": "{{language-variable}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"items\": [\r\n    {\r\n      \"product_id\": 1,\r\n      \"quantity\": 2\r\n    },\r\n    {\r\n      \"product_id\": 3,\r\n      \"quantity\": 1\r\n    },\r\n    {\r\n      \"product_id\": 5,\r\n      \"quantity\": 4\r\n    }\r\n  ]\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{local}}/order/store",
+              "host": [
+                "{{local}}"
+              ],
+              "path": [
+                "order",
+                "store"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "pay",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "accept-language",
+                "value": "{{language-variable}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{local}}/order/pay?order_id=6&payment_method=credit_card",
+              "host": [
+                "{{local}}"
+              ],
+              "path": [
+                "order",
+                "pay"
+              ],
+              "query": [
+                {
+                  "key": "order_id",
+                  "value": "6"
+                },
+                {
+                  "key": "payment_method",
+                  "value": "credit_card",
+                  "description": "credit_card | paypal"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "confirm",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "accept-language",
+                "value": "{{language-variable}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "id",
+                  "value": "6",
+                  "description": "the order id",
+                  "type": "text",
+                  "uuid": "45d16be1-c99e-4993-8ec3-1aed91286f04"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{local}}/order/confirm",
+              "host": [
+                "{{local}}"
+              ],
+              "path": [
+                "order",
+                "confirm"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "accept-language",
+                "value": "{{language-variable}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "id",
+                  "value": "3",
+                  "description": "the order id",
+                  "type": "text",
+                  "uuid": "45d16be1-c99e-4993-8ec3-1aed91286f04"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{local}}/order/delete",
+              "host": [
+                "{{local}}"
+              ],
+              "path": [
+                "order",
+                "delete"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update-item",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "accept-language",
+                "value": "{{language-variable}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"order_id\": 5,\r\n  \"items\": [\r\n    {\r\n      \"product_id\": 1,\r\n      \"quantity\": 1\r\n    },\r\n    {\r\n      \"product_id\": 3,\r\n      \"quantity\": 1\r\n    }\r\n  ]\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{local}}/order/update-item",
+              "host": [
+                "{{local}}"
+              ],
+              "path": [
+                "order",
+                "update-item"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "auth": {
+        "type": "bearer",
+        "bearer": [
+          {
+            "key": "token",
+            "value": "{{token}}",
+            "type": "string"
+          }
+        ]
+      },
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {},
+            "exec": [
+              ""
+            ]
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {},
+            "exec": [
+              ""
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "payment",
+      "item": [
+        {
+          "name": "index",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "accept-language",
+                "value": "{{language-variable}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{local}}/payment/index?page=1",
+              "host": [
+                "{{local}}"
+              ],
+              "path": [
+                "payment",
+                "index"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "show",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "accept-language",
+                "value": "{{language-variable}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{local}}/payment/show?id=1",
+              "host": [
+                "{{local}}"
+              ],
+              "path": [
+                "payment",
+                "show"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "by-order-id",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "accept-language",
+                "value": "{{language-variable}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{local}}/payment/by-order-id?id=1",
+              "host": [
+                "{{local}}"
+              ],
+              "path": [
+                "payment",
+                "by-order-id"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "1",
+                  "description": "the order id"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "auth": {
+        "type": "bearer",
+        "bearer": [
+          {
+            "key": "token",
+            "value": "{{token}}",
+            "type": "string"
+          }
+        ]
+      },
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {},
+            "exec": [
+              ""
+            ]
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {},
+            "exec": [
+              ""
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "local",
+      "value": ""
+    },
+    {
+      "key": "language-variable",
+      "value": "",
+      "description": "en | ar"
+    },
+    {
+      "key": "token",
+      "value": "",
+      "description": "injecte automatically by calling the login api"
+    }
+  ]
+}
