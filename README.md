@@ -35,8 +35,8 @@ If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Lar
 
 ## Setup Instructions
 1️⃣ Clone the repository:
-- git clone https://github.com/your-repo/order-management-api.git
-- cd order-management-api
+- git clone https://github.com/Moazen98/moazen-order-management-assignment.git
+- cd moazen-order-management-assignment
 
 2️⃣ Install dependencies
 - composer install
@@ -201,6 +201,8 @@ Used in:
 - Easily expandable to multiple other languages for different model like: product model
 - Seeders for inject data quickly into database
 - RouteServiceProvider with prefix version like: /v1
+- secure the data for each user that belong to him, prevent the other users from access to different one
+- Translation response messages : validation message - response api message (ar-en)
 
 ## Notes:
 
@@ -208,6 +210,7 @@ Used in:
 > Detailed request body examples for all endpoints can be reviewed using the provided Postman requests.
 > These requests demonstrate the full payload structure, headers, and validation requirements for each API call.
 
+>  You can check the postman file from the /public/developer_docs/moazen-order-management-assignment.postman_collection.json
 
 #### Apis that need jtw token are as fellows:
 - /authentication/logout
@@ -220,4 +223,3 @@ Used in:
 - /login
 - /register
 
->  You can check the postman file from the /public/developer_docs/moazen-order-management-assignment

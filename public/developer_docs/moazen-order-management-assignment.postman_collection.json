@@ -84,14 +84,14 @@
               "formdata": [
                 {
                   "key": "name",
-                  "value": "Mohamad Al Moazen",
+                  "value": "Mohamad Riad",
                   "description": "required",
                   "type": "text",
                   "uuid": "2bcf4232-e87d-45c7-923b-d52457dab6a5"
                 },
                 {
                   "key": "email",
-                  "value": "mhd.moazen98@gmail.com2",
+                  "value": "mhd98@gmail.com",
                   "description": "required",
                   "type": "text",
                   "uuid": "c1f63ba6-08d1-4d58-9153-fd59376b1e8a"
@@ -390,7 +390,7 @@
                 {
                   "key": "status",
                   "value": "Pending",
-                  "description": "Pending, Successful, Failed (not required -> all user orders)"
+                  "description": "Pending, Confirmed, Completed , Cancelled (not required -> all user orders)"
                 }
               ]
             }
@@ -472,7 +472,7 @@
               }
             ],
             "url": {
-              "raw": "{{local}}/order/pay?order_id=6&payment_method=credit_card",
+              "raw": "{{local}}/order/pay?order_id=7&payment_method=credit_card",
               "host": [
                 "{{local}}"
               ],
@@ -483,12 +483,12 @@
               "query": [
                 {
                   "key": "order_id",
-                  "value": "6"
+                  "value": "7"
                 },
                 {
                   "key": "payment_method",
                   "value": "credit_card",
-                  "description": "credit_card | paypal"
+                  "description": "credit_card | paypal | etc ..."
                 }
               ]
             }
@@ -511,7 +511,7 @@
               "formdata": [
                 {
                   "key": "id",
-                  "value": "6",
+                  "value": "1",
                   "description": "the order id",
                   "type": "text",
                   "uuid": "45d16be1-c99e-4993-8ec3-1aed91286f04"
@@ -547,7 +547,7 @@
               "formdata": [
                 {
                   "key": "id",
-                  "value": "3",
+                  "value": "1",
                   "description": "the order id",
                   "type": "text",
                   "uuid": "45d16be1-c99e-4993-8ec3-1aed91286f04"
@@ -580,7 +580,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n  \"order_id\": 5,\r\n  \"items\": [\r\n    {\r\n      \"product_id\": 1,\r\n      \"quantity\": 1\r\n    },\r\n    {\r\n      \"product_id\": 3,\r\n      \"quantity\": 1\r\n    }\r\n  ]\r\n}\r\n",
+              "raw": "{\r\n  \"order_id\": 7,\r\n  \"items\": [\r\n    {\r\n      \"product_id\": 1,\r\n      \"quantity\": 1\r\n    },\r\n    {\r\n      \"product_id\": 3,\r\n      \"quantity\": 10\r\n    }\r\n  ]\r\n}\r\n",
               "options": {
                 "raw": {
                   "language": "json"
