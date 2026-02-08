@@ -6,6 +6,8 @@ use App\Repositories\Auth\UserRepository;
 use App\Repositories\Auth\UserRepositoryInterface;
 use App\Repositories\Order\OrderRepository;
 use App\Repositories\Order\OrderRepositoryInterface;
+use App\Repositories\Payment\PaymentRepository;
+use App\Repositories\Payment\PaymentRepositoryInterface;
 use App\Repositories\Product\ProductRepository;
 use App\Repositories\Product\ProductRepositoryInterface;
 use App\Services\KernelServices;
@@ -38,8 +40,8 @@ class AppServiceProvider extends ServiceProvider
         );
 
         $this->app->singleton(
-            \App\Repositories\Payment\PaymentRepositoryInterface::class,
-            \App\Repositories\Payment\PaymentRepository::class
+            PaymentRepositoryInterface::class,
+            PaymentRepository::class
         );
 
 

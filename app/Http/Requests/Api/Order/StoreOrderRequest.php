@@ -3,7 +3,6 @@
 namespace App\Http\Requests\Api\Order;
 
 use App\Http\Requests\Api\ApiParentRequest;
-use Illuminate\Foundation\Http\FormRequest;
 
 class StoreOrderRequest extends ApiParentRequest
 {

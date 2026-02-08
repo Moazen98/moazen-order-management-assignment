@@ -8,9 +8,7 @@ use App\Http\Requests\Api\Order\UpdateOrderItemsRequest;
 use App\Http\Resources\Api\Order\OrderCollection;
 use App\Http\Resources\Api\Order\OrderResource;
 use App\Http\Responses\V1\CustomResponse;
-use App\Services\Gateways\CreditCardGateway;
 use App\Services\Gateways\PaymentGatewayFactory;
-use App\Services\Gateways\PaypalGateway;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 

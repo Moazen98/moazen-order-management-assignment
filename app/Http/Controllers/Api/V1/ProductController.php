@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Api\V1;
 
 use App\Http\Controllers\Api\MainApiController;
-use App\Http\Controllers\Controller;
 use App\Http\Resources\Api\Product\ProductCollection;
 use App\Http\Resources\Api\Product\ProductResource;
 use App\Http\Responses\V1\CustomResponse;
@@ -43,9 +42,6 @@ class ProductController extends MainApiController
         );
     }
 
-    /**
-     * GET /api/v1/products/{id}
-     */
     public function show(Request $request)
     {
         $productResponse = app('servicesV1')->productService->show($request->id);

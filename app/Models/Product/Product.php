@@ -15,7 +15,7 @@ class Product extends Model
     protected $fillable = ['price', 'is_active','name','description'];
     public $translatedAttributes = ['name', 'description'];
 
-    protected $translationModel = \App\Models\Product\ProductTranslation::class;
+    protected $translationModel = ProductTranslation::class;
 
     public function setTranslatedAttributes(Request $request)
     {

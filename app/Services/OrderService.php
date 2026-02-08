@@ -3,8 +3,6 @@
 namespace App\Services;
 
 use App\Enums\OrderStatus;
-use App\Enums\PaymentStatus;
-use App\Models\Order\Order;
 use App\Pipelines\Order\Payment\OrderMustBeConfirmed;
 use App\Pipelines\Order\Payment\OrderNotCancelled;
 use App\Pipelines\Order\Payment\OrderNotPaid;

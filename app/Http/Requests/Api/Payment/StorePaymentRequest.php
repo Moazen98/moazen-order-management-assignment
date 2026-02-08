@@ -3,7 +3,6 @@
 namespace App\Http\Requests\Api\Payment;
 
 use App\Http\Requests\Api\ApiParentRequest;
-use Illuminate\Foundation\Http\FormRequest;
 
 class StorePaymentRequest extends ApiParentRequest
 {
