@@ -210,7 +210,7 @@ Used in:
 > Detailed request body examples for all endpoints can be reviewed using the provided Postman requests.
 > These requests demonstrate the full payload structure, headers, and validation requirements for each API call.
 
->  You can check the postman file from the /public/developer_docs/moazen-order-management-assignment.postman_collection.json
+>  You can check the postman file from the /app/developer_docs/moazen-order-management-assignment.postman_collection.json
 
 #### Apis that need jtw token are as fellows:
 - /authentication/logout
