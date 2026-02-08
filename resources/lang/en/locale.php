@@ -39,5 +39,6 @@ return [
     "Order cannot be confirmed" => "Order cannot be confirmed",
     "Payment processed successfully" => "Payment processed successfully",
     "This order has already paid" => "This order has already paid",
+    "Language not found" => "Language not found, please set your language label",
 
 ];

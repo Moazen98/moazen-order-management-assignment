@@ -21,7 +21,7 @@ class SetApiLocal
         App::setLocale($language);
 
         if (!in_array($language, $availableLanguages) && !is_null($language)) {
-            return CustomResponse::Failure(Response::HTTP_INTERNAL_SERVER_ERROR, __('mobile_message.Language not found'), [], []);
+            return CustomResponse::Failure(Response::HTTP_NOT_FOUND, __('locale.Language not found'), [], []);
         }
 
         return $next($request);

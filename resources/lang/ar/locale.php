@@ -45,4 +45,6 @@ return [
     "Payment processed successfully" => "تمت معالجة الدفع بنجاح",
     "This order has already paid" => "تم دفع هذا الطلب مسبقًا",
 
+    "Language not found" => "لم يتم العثور على اللغة، يرجى تحديد اسم لغتك",
+
 ];

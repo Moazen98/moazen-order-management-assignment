@@ -794,16 +794,17 @@
   "variable": [
     {
       "key": "local",
-      "value": ""
+      "value": "http://127.0.0.1:8000/api/v1",
+      "description": "http://127.0.0.1:8000/api/v1"
     },
     {
       "key": "language-variable",
-      "value": "",
+      "value": "en",
       "description": "en | ar"
     },
     {
       "key": "token",
-      "value": "",
+      "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL3YxL2F1dGhlbnRpY2F0aW9uL2xvZ2luIiwiaWF0IjoxNzcwNTA3OTk1LCJleHAiOjE3NzA1MTE1OTUsIm5iZiI6MTc3MDUwNzk5NSwianRpIjoiZnZhT2k0R1dEa2E1NURZQiIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.4LSGoKLNzMKsoIo5A-EjpU9NpXDQ6IeCNNK257TzFi0",
       "description": "injecte automatically by calling the login api"
     }
   ]
